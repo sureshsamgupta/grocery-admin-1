@@ -1,0 +1,95 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+  </head>
+  <body>
+     <div class="container-fluid p-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="color">Quote Calculator Category Created</h1>
+          </div>
+          <div class="col-lg-6 text-right">
+            <!-- <button class="btn btn-back text-light p-1" (click)="back()"><i class="fa fa-undo m-2" aria-hidden="true"></i>Back to Dashboard</button> -->
+
+          </div>
+        </div>
+     </div>
+
+     <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6 offset-md-3">
+          <div class="card card-content p-4">
+            <div class="row "></div>
+            <div class="col-md-12 ">
+                  <form>
+                    <div class="single-login-field mt-3">
+                      <select class="form-control" #device1 (change)="onChange($event, device1.value,1)">
+                        <option >Select Country</option>
+                          <option *ngFor="let data1 of country">{{data1.name}}</option>
+                          </select>
+                  </div>
+                  <div class="single-login-field mt-3">
+                    <select class="form-control" #device2 (change)="onChange($event, device2.value,2)">
+                      <option >Select state</option>
+                        <option *ngFor="let data1 of state">{{data1.name}}</option>
+                        </select>
+                </div>
+                     <div class="single-login-field mt-3">
+                      <select class="form-control" #device3 (change)="onChange($event, device3.value,3)">
+                        <option >Select city</option>
+                          <option *ngFor="let data1 of city">{{data1.name}}</option>
+                          </select>
+                   </div>
+                     <p style="color:red;"  *ngIf="error">{{message}}</p>
+                     <div class="single-login-field mt-3" *ngIf="!update">
+                        <button class="btn-back text-white w-100 btn" (click)=signup()> create</button>
+                     </div>
+                     <div class="single-login-field mt-3" *ngIf="update">
+                        <button class="btn-back text-white w-100 btn" (click)=updatedata()> update</button>
+                     </div>
+                  </form>
+              
+            </div>
+         
+          </div>
+         </div>
+       </div>
+     </div>
+     <table class="table table-striped " style="margin-top: 10px;">
+      <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Country</th>
+        <th scope="col">State</th>
+        <th scope="col">City</th>
+        <th scope="col">delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of candinatedata; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ country.country}}
+        </td>
+        <td>
+          {{ country.state }}
+        </td>
+        <td>
+          {{ country.catName }}
+        </td>
+        
+
+        <td>
+         <button  (click)="delte(country._id)" class="btn btn-outline-primary">delete</button>
+       </td>
+      </tr>
+      </tbody>
+    </table>
+
+     
+  </body>
+  </html>

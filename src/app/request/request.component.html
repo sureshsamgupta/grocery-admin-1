@@ -1,0 +1,104 @@
+<div *ngIf="status">
+    <div>
+        <!-- <button class="float-right btn-back text-light" style="margin: 10px;" (click)="back()">Back To DashBoard</button> -->
+     </div>
+      <table class="table table-striped" >
+         <thead>
+         <tr>
+           <th scope="col">No</th>
+           <th scope="col">Name</th>
+           <th scope="col">Email-id</th>
+           <th scope="col">mobile</th>
+           <th scope="col">Price</th>
+           <th scope="col">Image</th>
+           <th scope="col">status</th>
+            <th scope="col">country</th>
+            <th scope="col">state</th>
+            <th scope="col">city</th>
+           <th scope="col">change status</th>
+         </tr>
+         </thead>
+         <tbody>
+         <tr *ngFor="let country of candinatedata; index as i">
+           <th scope="row">{{ i + 1 }}</th>
+           <td>
+             {{ country.user_name }} 
+           </td>
+           <td>
+             {{ country.user_email }}
+           </td>
+           
+           <td>
+             {{ country.user_phone }}
+           </td>
+           <td>
+            {{ country.price }}
+          </td>
+          <td>
+            <a href="http://15.206.101.235:3010/{{country.picture}}" target="_blank">link</a>
+          </td>
+          <td>
+            {{ country.status }}
+          </td>
+          <td>
+            {{ country.country }}
+          </td>
+          <td>
+            {{ country.state }}
+          </td>
+          <td>
+            {{ country.city }}
+          </td>
+          <td>
+            <button (click)="chnagescreen()">status</button>
+          </td>
+         </tr>
+         </tbody>
+       </table>
+     </div>
+
+
+     <div *ngIf="!status">
+        <div>
+            <button class="float-right" style="margin: 10px;" (click)="backto()">Back</button>
+         </div>
+          <table class="table table-striped" >
+             <thead>
+             <tr>
+               <th scope="col">model</th>
+               <th scope="col">locationOfVehicle</th>
+               <th scope="col">missingParts</th>
+               <th scope="col">accept</th>
+               <th scope="col">pickup</th>
+               <th scope="col">completed</th>
+               <th scope="col">Cancle</th>
+             </tr>
+             </thead>
+             <tbody>
+             <tr *ngFor="let country of candinatedata; index as i">
+               <td>
+                 {{ country.model }} 
+               </td>
+               <td>
+                 {{ country.locationOfVehicle }}
+               </td>
+               
+               <td>
+                 {{ country.missingParts }}
+               </td>
+              <td>
+                <button (click)="statuschnage(country._id,1)">accept</button>
+              </td>
+              <td>
+                <button (click)="statuschnage(country._id,2)">pickup</button>
+              </td>
+              <td>
+                <button (click)="statuschnage(country._id,3)">completed</button>
+              </td>
+              <td>
+                <button (click)="statuschnage(country._id,4)">completed</button>
+              </td>
+             </tr>
+             </tbody>
+           </table>
+         </div>

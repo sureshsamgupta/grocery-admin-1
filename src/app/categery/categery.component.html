@@ -1,0 +1,82 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+  </head>
+  <body>
+     <div class="container-fluid p-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="color"> SELL Today Category </h1>
+          </div>
+          <div class="col-lg-6 text-right">
+            <!-- <button class="btn btn-back text-light p-1" (click)="back()"><i class="fa fa-undo m-2" aria-hidden="true"></i>Back to Dashboard</button> -->
+
+          </div>
+        </div>
+     </div>
+
+     <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6 offset-md-3">
+          <div class="card card-content p-4">
+            <div class="row "></div>
+            <div class="col-md-12 ">
+                  <form>
+                     <div class="single-login-field mt-3">
+                      <input type="text" placeholder="catName" [(ngModel)]="catName" name="company_name">
+                   </div>
+                   <div  class="mt-3">
+                   <input type="file" id="myFile" #fileUploader (change)="onFileChanged($event)" name="filename">
+                 </div>
+                     <p style="color:red;"  *ngIf="error">{{message}}</p>
+                     <div class="single-login-field mt-3" *ngIf="!update">
+                        <button class="btn-back text-white w-100 btn" (click)=signup()> create</button>
+                     </div>
+                     <div class="single-login-field mt-3" *ngIf="update">
+                      <button class="btn-back text-white w-100 btn" (click)=updatedata()> update</button>
+                   </div>
+                  </form>
+              
+            </div>
+         
+          </div>
+         </div>
+       </div>
+     </div>
+     <table class="table table-striped " style="margin-top: 10px;">
+      <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">image</th>
+        <th scope="col">edit</th>
+        <th scope="col">delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of candinatedata; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ country.catName }}
+        </td>
+        <td>
+          <a href="http://15.206.101.235:3010/{{country.catImage}}" target="_blank">link</a>
+        </td>
+        
+        <td>
+          <button  (click)="block(country)" class="btn btn-outline-primary">edit</button>
+        </td>
+        <td>
+         <button  (click)="delte(country._id)" class="btn btn-outline-primary">delete</button>
+       </td>
+      </tr>
+      </tbody>
+    </table>
+
+     
+  </body>
+  </html>

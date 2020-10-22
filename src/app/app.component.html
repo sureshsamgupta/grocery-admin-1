@@ -1,0 +1,119 @@
+
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar"  *ngIf="menu">
+      <div class="sidebar-header bg-light text-dark">
+          <h3>Admin Dashboard</h3>
+          <strong>AD</strong>
+      </div>
+
+      <ul class="list-unstyled components">
+          <li >
+              <a routerLink="user" data-toggle="collapse" aria-expanded="false">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                  Users
+              </a>
+              
+          </li>
+
+          <li>
+            <a  routerLink='/coupon' >
+              <i class="fa fa-list-alt" aria-hidden="true"></i>
+                Coupon
+                </a>
+          
+        </li>
+        <li>
+          <a  routerLink='/district' >
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+              District
+              </a>
+        
+      </li>
+      <li>
+        <a  routerLink='/munci' >
+          <i class="fa fa-list-alt" aria-hidden="true"></i>
+          Municipality
+            </a>
+      
+    </li>
+          <li>
+              <a  routerLink='/categrory' >
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                  Add Category
+                  </a>
+            
+          </li>
+          <li> 
+            <a routerLink='/prodcut' data-toggle="collapse" aria-expanded="false" >
+              <i class="fa fa-list-ul" aria-hidden="true"></i>
+               Product
+            </a></li>
+          <li>
+            <!-- <a routerLink="cc">
+              <i class="fa fa-list-alt" aria-hidden="true"></i>
+                QC Category
+            </a>
+        </li>
+        
+          <li>
+            <a routerLink='/qcsub' data-toggle="collapse" aria-expanded="false" >
+              <i class="fa fa-list-ul" aria-hidden="true"></i>
+               QC SubCategory
+            </a> -->
+          
+        </li>
+
+          
+
+        <!-- <li>
+          <a routerLink="qc">
+            <i class="fa-address-book-o" aria-hidden="true"></i>
+              QC Request
+          </a>
+      </li> -->
+          
+          <li>
+              <a routerLink="order">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+                  Order
+              </a>
+          </li>
+        
+      </ul>
+
+    
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content" >
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="menu">
+          <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                  
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-align-justify"></i>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                      <li class="nav-item active">
+                        <button class="btn btn-info text-light" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</button>
+                      </li>
+                     
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+      
+  <router-outlet></router-outlet>
+
+     
+      
+  </div>
+</div>

@@ -1,0 +1,105 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+  </head>
+  <body>
+    <div *ngIf="status">
+     <div class="container-fluid p-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="color"> Order</h1>
+          </div>
+          <div class="col-lg-6 text-right">
+            <!-- <button class="btn btn-back text-light p-1" (click)="back()"><i class="fa fa-undo m-2" aria-hidden="true"></i>Back to Dashboard</button> -->
+
+          </div>
+        </div>
+     </div>
+
+     <table class="table table-striped " style="margin-top: 10px;">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Request Date</th>
+        <th scope="col">Order Status</th>
+        <th scope="col">Total Price</th>
+        <th scope="col">Details</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of productdata| paginate: { itemsPerPage: 5, currentPage: p }; index as i">
+        <td>
+          {{ country._id}}
+        </td>
+        <td>
+            {{ country.requestDate}}
+          </td>
+          <td>
+            {{ country.order_status}}
+          </td>
+          <td>
+            {{ country.total_price}}
+          </td>
+        <td>
+          <button  (click)="details(country.product_items,country.delivery_address,country._id,country.user)" class="btn btn-outline-primary">Details</button>
+        </td>
+       
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+     
+  </body>
+  </html>
+
+
+  <div *ngIf="!status">
+    <div>
+        <button class="float-right" style="margin: 10px;" (click)="backto()">Back</button>
+     </div>
+      <table class="table table-striped" >
+         <thead>
+         <tr>
+           <th scope="col"> Product Name</th>
+           <th scope="col"> Quantity</th>
+           <th scope="col"> Image</th>
+           <th scope="col"> Price</th>
+           <th scope="col"> Change Status</th>
+          
+         </tr>
+         </thead>
+         <tbody>
+         <tr *ngFor="let country of productitemany; index as i">
+           <td>
+             {{ country.product.product_name }} 
+           </td>
+           <td>
+            {{ country.qty }} 
+          </td>
+          <td>
+            <a href="http://13.234.42.204:3013/{{country.product.product_image}}" target="_blank">link</a>
+          </td>
+          <td>
+            {{ country.product.price }}
+          </td>
+          <td>
+            <select class="form-control" #device1 (change)="onChange($event, device1.value)">
+                <option >Change Status</option>
+                <option >Accepted</option>
+                <option >Dispatched</option>
+                <option >Completed</option>
+                <option >Reject</option>
+                
+                </select>
+          </td>
+         </tr>
+         </tbody>
+       </table>
+
+       <p>Address:<b>{{addressitem.customer_name}}</b>, {{addressitem.house_number}},{{addressitem.district}},{{addressitem.municipality}}  ,Mobile Number: {{addressitem.phone_number}}</p>
+     </div>

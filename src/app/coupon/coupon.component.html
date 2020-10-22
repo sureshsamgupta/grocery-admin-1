@@ -1,0 +1,81 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+  </head>
+  <body>
+     <div class="container-fluid p-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="color"> Coupon</h1>
+          </div>
+          <div class="col-lg-6 text-right">
+            <!-- <button class="btn btn-back text-light p-1" (click)="back()"><i class="fa fa-undo m-2" aria-hidden="true"></i>Back to Dashboard</button> -->
+
+          </div>
+        </div>
+     </div>
+
+     <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6 offset-md-3">
+          <div class="card card-content p-4">
+            <div class="row "></div>
+            <div class="col-md-12 ">
+                  <form>
+                     <div class="single-login-field mt-3">
+                      <input type="text" placeholder="CouponName" [(ngModel)]="catName" name="company_name">
+                   </div>
+                   <div  class="mt-3">
+                    <input type="text" placeholder="Percent" [(ngModel)]="offer_percent" name="offer_percent">
+                 </div>
+                     <!-- <p style="color:red;"  *ngIf="error">{{message}}</p> -->
+                     <div class="single-login-field mt-3">
+                      <button class="btn-back text-white w-100 btn" (click)=updatedata()> Sumit</button>
+                   </div>
+                  </form>
+              
+            </div>
+         
+          </div>
+         </div>
+       </div>
+     </div>
+     <table class="table table-striped " style="margin-top: 10px;">
+      <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Percentage</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of couponresponse| paginate: { itemsPerPage: 5, currentPage: p }; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ country.coupon_name }}
+        </td>
+        <td>
+          {{ country.offer_percent }}
+        </td>
+        <!-- <td>
+          <a href="http://15.206.101.235:3010/{{country.catImage}}" target="_blank">link</a>
+        </td> -->
+        
+        <td>
+          <button  (click)="delte(country._id)" class="btn btn-outline-primary">Delete</button>
+        </td>
+        <!-- <td>
+         <button  (click)="delte(country._id)" class="btn btn-outline-primary">delete</button>
+       </td> -->
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+     
+  </body>
+  </html>

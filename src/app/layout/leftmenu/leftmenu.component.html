@@ -1,0 +1,165 @@
+<!-- <section class="leftMenuSec" [ngClass]="showTrigger ? 'show' : ''">
+  <div class="leftFixedBar">
+    <div class="w-100">
+      <a style="cursor: pointer;" class="logo" routerLink="/dashboard"><img src="assets/img/logo.png"
+          class="img-fluid" /></a>
+   
+
+
+     
+
+
+
+
+      <ul class="list-unstyled list-time-line-list sidebar-menulist w-100">
+
+
+
+   
+
+        
+        <li>
+          <a routerLink="/profile" [routerLinkActive]="['active']" (click)="clickEvent('close')"> <span>User</span>
+          </a>
+
+        </li>
+        <li>
+          <a routerLink="/profile" [routerLinkActive]="['active']" (click)="clickEvent('close')"> <span>Category</span>
+          </a>
+
+        </li>
+        <li>
+          <a routerLink="/profile" [routerLinkActive]="['active']" (click)="clickEvent('close')"> <span>Sub-Category</span>
+          </a>
+
+        </li>
+        <li>
+            <a routerLink="/profile" [routerLinkActive]="['active']" (click)="clickEvent('close')"> <span>Profile</span>
+            </a>
+  
+          </li>
+
+          
+      </ul>
+
+
+    </div>
+    <div>
+
+
+
+    
+      
+
+
+
+      <a (click)="logout()" href="#" title="Logout" class="logootbtn"><i class="fa fa-power-off"></i>Logout</a>
+    </div>
+  </div>
+  <div class="collapsedMenu" [ngClass]="dynamicCls">
+    <a class="close" (click)="clickEvent('close')"><img src="assets/img/close.png" /></a>
+
+    <h4 class="textCapSmall">Codefire</h4>
+    <ul class="list-unstyled list-time-line-list">
+      <li>
+        <a routerLink="/dashboard" [routerLinkActive]="['active']" (click)="clickEvent('close')">
+          <div>My Tickets </div>
+        </a>
+      </li>
+      <li *ngIf="roleShow">
+        <a routerLink="/ticket" [routerLinkActive]="['active']" (click)="clickEvent('close')">
+          <div>All Tickets </div>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<header class="mobile-header show-mobile">
+  <div class="row align-items-center">
+    <div class="col-6 col-md-3 col-sm-3">
+      <div class="mobile-logo">
+        <a>
+          <img src="assets/img/logo.png" alt="logo" class="img-fluid">
+        </a>
+      </div>
+    </div>
+    <div class="col-6 col-md-9 col-sm-9 position-relative">
+      <a class="pull-right togglebtn" (click)="triggermenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+</header> -->
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar"  >
+      <div class="sidebar-header bg-light text-dark">
+          <h4>Admin Dashboard</h4>
+          <strong>AD</strong>
+      </div>
+
+      <ul class="list-unstyled components">
+          <li class="active">
+              <a href="user" data-toggle="collapse" aria-expanded="false">
+                  <i class="fas fa-home"></i>
+                  Users
+              </a>
+              
+          </li>
+          <li>
+              <a  routerLink='/categrory' >
+                  <i class="fas fa-briefcase"></i>
+                  Category
+              </a>
+              <a routerLink='/subcategrory' data-toggle="collapse" aria-expanded="false" >
+                  <i class="fas fa-copy"></i>
+                  SubCategory
+              </a>
+            
+          </li>
+          <li>
+              <a href="request">
+                  <i class="fas fa-image"></i>
+                  Requests
+              </a>
+          </li>
+        
+      </ul>
+
+    
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                  
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-align-justify"></i>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                      <li class="nav-item active">
+                        <button class="btn btn-info text-light" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</button>
+                      </li>
+                     
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+      
+  <router-outlet></router-outlet>
+
+     
+      
+  </div>
+</div>

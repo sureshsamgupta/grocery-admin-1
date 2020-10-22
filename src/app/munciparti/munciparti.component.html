@@ -1,0 +1,140 @@
+<!-- <div>
+    <button class="float-right" style="margin: 10px;" (click)="back()">Back To DashBoard</button>
+ </div>
+    <section class="jobguru-breadcromb-area">
+        <div class="breadcromb-top section_100">
+           <div class="container">
+              <div class="row">
+                 <div class="col-md-12">
+                    <div class="breadcromb-box">
+                       <h3>sub-Categery cretaed</h3>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section>
+    <div class="row"></div>
+       <div class="col-md-12">
+             <form>
+                <div class="single-login-field">
+                    <select class="form-control" #device (change)="onChange($event, device.value,0)">
+                        <option>Webuy</option>
+                        <option>Calculatore</option>
+                        </select>
+                </div>
+                <div class="single-login-field">
+                    <select class="form-control" #device12 (change)="onChange($event, device12.value,1)">
+                        <option *ngFor="let data1 of data">{{data1.catName}}</option>
+                        </select>
+                </div>
+                <div class="single-login-field">
+                 <input type="text" placeholder="subcatName" [(ngModel)]="catName" name="company_name">
+              </div>
+              <div >
+              <input type="file" (change)="onFileChanged($event)">
+            </div>
+            <div  *ngIf="error">
+                <input type="number" placeholder="price" [(ngModel)]="price" name="company_name">
+             </div>
+                <p style="color:red;"  *ngIf="error">{{message}}</p>
+                <div class="single-login-field">
+                   <button class="btn-primary w-100 btn" (click)=signup()>Category create</button>
+                </div>
+             </form>
+         
+       </div>
+    
+  -->
+
+  
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+  </head>
+  <body>
+     <div class="container-fluid p-4">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="color">SELL Today SubCategory </h1>
+          </div>
+          <div class="col-lg-6 text-right">
+            <!-- <button class="btn btn-back text-light p-1" (click)="back()"><i class="fa fa-undo m-2" aria-hidden="true"></i>Back to Dashboard</button> -->
+
+          </div>
+        </div>
+     </div>
+
+     <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-4 offset-md-4">
+          <div class="card card-content p-4">
+            <div class="row "></div>
+            <div class="col-md-12 ">
+               <form>
+                  <div class="single-login-field mt-3">
+                      <select class="form-control" #device (change)="onChange($event, device.value)">
+                          <option *ngFor="let data1 of data">{{data1.district_name}}</option>
+                          </select>
+                  </div>
+                  <div class="single-login-field mt-3">
+                   <input type="text" placeholder="Name" [(ngModel)]="Name" name="Name">
+                </div>
+                <!-- <div class="mt-3">
+                <input type="file" #fileUploader (change)="onFileChanged($event)">
+              </div> -->
+              <!-- <div  >
+               <input type="number" placeholder="price in $" [(ngModel)]="price" name="company">
+            </div> -->
+                  <div class="single-login-field mt-3" >
+                     <button class="btn-back text-white w-100 btn" (click)=addmunci()> Sumit</button>
+                  </div>
+               </form>
+              
+            </div>
+         
+          </div>
+         </div>
+       </div>
+     </div>
+     <!-- <table class="table table-striped " style="margin-top: 10px;">
+      <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Catid</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Edit</th>
+        <th scope="col">delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of candinatedata; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ country.catId }} 
+        </td>
+        <td>
+          {{ country.subCatName }}
+        </td>
+        {{ country.price }}
+        <td>
+        
+       </td>
+       
+       <td>
+         <button  (click)="block(country)" class="btn btn-outline-primary">edit</button>
+       </td>
+       <td>
+        <button  (click)="delte(country._id)" class="btn btn-outline-primary">delete</button>
+      </td>
+        
+      </tr>
+      </tbody>
+    </table> -->
+     
+  </body>
+  </html>

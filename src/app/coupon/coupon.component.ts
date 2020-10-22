@@ -1,0 +1,62 @@
+import { Component, OnInit } from '@angular/core';
+import { MainserviceService } from '../service/mainservice/mainservice.service';
+import { Router } from '@angular/router';
+import { sharedService } from '../service/shared.service';
+
+@Component({
+  selector: 'app-coupon',
+  templateUrl: './coupon.component.html',
+  styleUrls: ['./coupon.component.css']
+})
+export class CouponComponent implements OnInit {
+  catName:any
+  offer_percent:any
+  couponresponse:any
+
+  constructor(private service:MainserviceService,private router:Router,private sub:sharedService) { }
+
+  ngOnInit() {
+    this.getcoupondata()
+    this.sub.getToken(true);
+  }
+
+  getcoupondata(){
+this.service.getcoupon().subscribe((res)=>{
+  if(res){
+this.couponresponse=res.response.reverse()
+  }
+})
+  }
+
+  updatedata(){
+    if(!this.catName){
+      alert("Please Enter Coupon Name")
+      return
+    }else if(!this.offer_percent){
+      alert("Please Enter PerCent")
+      return
+    }
+    let obj={
+      "coupon_name":this.catName,
+      "offer_percent":this.offer_percent
+    }
+    this.service.createcoupon(obj).subscribe((res)=>{
+      console.log(res)
+    if(res){
+      alert("Coupon added")
+      this.catName=""
+      this.getcoupondata()
+    }
+    })
+  }
+
+  delte(key){
+    this.service.delcoupon(key).subscribe((res)=>{
+      if(res){
+        alert("Delte Successfull")
+        this.getcoupondata()
+      }
+    })
+  }
+
+}

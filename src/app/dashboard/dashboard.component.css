@@ -1,0 +1,16 @@
+.color
+{
+    color: #070994; ;
+}
+.btn-lgt{
+    background-color: #080a6d;
+}
+.card-content{
+    -webkit-box-shadow: -1px 7px 29px -2px rgba(21,34,71,0.86);
+-moz-box-shadow: -1px 7px 29px -2px rgba(21,34,71,0.86);
+box-shadow: -1px 7px 29px -2px rgba(21,34,71,0.86);
+
+}
+.nounderline{
+    text-decoration: none !important;
+}
