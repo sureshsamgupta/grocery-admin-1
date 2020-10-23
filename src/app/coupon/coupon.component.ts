@@ -12,6 +12,7 @@ export class CouponComponent implements OnInit {
   catName:any
   offer_percent:any
   couponresponse:any
+  status:any
 
   constructor(private service:MainserviceService,private router:Router,private sub:sharedService) { }
 
@@ -28,6 +29,15 @@ export class CouponComponent implements OnInit {
         this.getcoupondata()
       }
     })
+}
+
+onChange($event, device){
+  if(device=="Cashback"){
+    this.status=1
+  }else if(device=="Percantage"){
+    this.status=0
+  }
+
 }
 
   getcoupondata(){
@@ -48,7 +58,8 @@ this.couponresponse=res.response.reverse()
     }
     let obj={
       "coupon_name":this.catName,
-      "offer_percent":this.offer_percent
+      "offer_percent":this.offer_percent,
+      "is_cashback":this.status
     }
     this.service.createcoupon(obj).subscribe((res)=>{
       console.log(res)

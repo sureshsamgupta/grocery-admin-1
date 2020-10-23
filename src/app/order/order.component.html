@@ -69,7 +69,6 @@
            <th scope="col"> Quantity</th>
            <th scope="col"> Image</th>
            <th scope="col"> Price</th>
-           <th scope="col"> Change Status</th>
           
          </tr>
          </thead>
@@ -87,19 +86,19 @@
           <td>
             {{ country.product.price }}
           </td>
-          <td>
-            <select class="form-control" #device1 (change)="onChange($event, device1.value)">
-                <option >Change Status</option>
-                <option >Accepted</option>
-                <option >Dispatched</option>
-                <option >Completed</option>
-                <option >Reject</option>
-                
-                </select>
-          </td>
+         
          </tr>
          </tbody>
        </table>
-
+<div class="colume">
+  <select class="form-control" #device1 (change)="onChange($event, device1.value)">
+    <option >Change Status</option>
+    <option >Accepted</option>
+    <option >Dispatched</option>
+    <option >Completed</option>
+    <option >Reject</option>
+    
+    </select>
+</div>
        <p>Address:<b>{{addressitem.customer_name}}</b>, {{addressitem.house_number}},{{addressitem.district}},{{addressitem.municipality}}  ,Mobile Number: {{addressitem.phone_number}}</p>
      </div>

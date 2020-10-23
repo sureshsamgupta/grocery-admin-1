@@ -14,6 +14,7 @@ export class OrderComponent implements OnInit {
 productdata:any
 status=true
 productitemany:any
+userid1:any
 addressitem:any
 userdata:any
 userid:any
@@ -52,7 +53,9 @@ this.userid=id
 this.productitemany=productitems
 this.addressitem=address
 this.userdata=user
+this.userid1=user._id
     console.log(productitems)
+    console.log("address")
     console.log(address)
     console.log(id)
     console.log(user)
@@ -73,7 +76,8 @@ this.userdata=user
     }
     let obj={
       "orderId": this.userid,
-    "order_status": status
+    "order_status": status,
+    "userId":this.userid1
     }
     this.service.updateStatus(obj).subscribe((res)=>{
       if(res){

@@ -32,6 +32,14 @@
                    <div  class="mt-3">
                     <input type="number" placeholder="Percent" [(ngModel)]="offer_percent" name="offer_percent">
                  </div>
+                 <div class="mt-3">
+                 <select class="form-control" #device1 (change)="onChange($event, device1.value)">
+                  <option >Select Type</option>
+                  <option >Cashback</option>
+                  <option >Percantage</option>
+                  
+                  </select>
+                </div>
                      <!-- <p style="color:red;"  *ngIf="error">{{message}}</p> -->
                      <div class="single-login-field mt-3">
                       <button class="btn-back text-white w-100 btn" (click)=updatedata()> Sumit</button>
