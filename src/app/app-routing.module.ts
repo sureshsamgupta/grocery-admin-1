@@ -13,6 +13,7 @@ import { MuncipartiComponent } from './munciparti/munciparti.component';
 import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
+import { BannerComponent } from './banner/banner.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'login' , component:LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'request' , component:RequestComponent},
   {path: 'cc' , component:CalculatorcategoryComponent},
   {path: 'qc' , component:CalculatordataComponent},
+  {path: 'banner' , component:BannerComponent},
   {path: 'coupon' , component:CouponComponent},
   {path: 'district' , component:DistrictComponent},
   {path: 'munci' , component:MuncipartiComponent},

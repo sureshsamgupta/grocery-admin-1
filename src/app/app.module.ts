@@ -22,6 +22,7 @@ import { MuncipartiComponent } from './munciparti/munciparti.component';
 import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { OrderComponent } from './order/order.component';
     MuncipartiComponent,
     AddcategoryComponent,
     ProductComponent,
-    OrderComponent
+    OrderComponent,
+    BannerComponent
   ],
   imports: [
     NgxPaginationModule,

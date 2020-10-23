@@ -171,4 +171,19 @@ export class MainserviceService {
     return this.sevice.getLogin('deleteProduct/' + key +"/", 'DEL',0, );
   }
 
+  delbanner(key){
+    return this.sevice.getLogin('deleteBanner/' + key +"/", 'DEL',0, );
+  }
+
+  getbanner(){
+    return this.sevice.getLogin('getAllBanners' , 'GET',0, );
+  }
+
+  createbanner(file:File): Observable<any> {
+    let input = new FormData();
+      input.append("banner_image",file)
+      
+    return this.sevice.getLogin('createBanner', 'POST', input);
+  }
+
 }
