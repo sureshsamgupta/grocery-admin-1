@@ -34,7 +34,7 @@ export class DistrictComponent implements OnInit {
     }
     this.service.adddistrict(obj).subscribe((res)=>{
         if(res){
-          alert("added sucessfully")
+          alert("Added Sucessfully sucessfully")
           this.Name=''
           this.getdistrcitdata()
         }

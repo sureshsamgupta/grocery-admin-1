@@ -20,6 +20,16 @@ export class CouponComponent implements OnInit {
     this.sub.getToken(true);
   }
 
+  delte(key){
+    console.log(key)
+    this.service.delcoupon(key).subscribe((res)=>{
+      if(res){
+        alert("Delete Successfully")
+        this.getcoupondata()
+      }
+    })
+}
+
   getcoupondata(){
 this.service.getcoupon().subscribe((res)=>{
   if(res){
@@ -43,20 +53,14 @@ this.couponresponse=res.response.reverse()
     this.service.createcoupon(obj).subscribe((res)=>{
       console.log(res)
     if(res){
-      alert("Coupon added")
+      alert("Coupon Added Sucessfully")
       this.catName=""
+      this.offer_percent=''
       this.getcoupondata()
     }
     })
   }
 
-  delte(key){
-    this.service.delcoupon(key).subscribe((res)=>{
-      if(res){
-        alert("Delte Successfull")
-        this.getcoupondata()
-      }
-    })
-  }
+
 
 }

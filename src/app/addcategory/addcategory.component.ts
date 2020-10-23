@@ -32,7 +32,7 @@ export class AddcategoryComponent implements OnInit {
     }
     this.service.createproduccategory(this.categoryname,this.file).subscribe((res)=>{
       if(res){
-        alert("added")
+        alert("Added Sucessfully")
         this.categoryname=''
         this.fileUploader.nativeElement.value = null;
         this.findallcategory()

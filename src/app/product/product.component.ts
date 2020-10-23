@@ -98,7 +98,7 @@ addproduct(){
 }
 this.service.createproduct(this.product_name,this.seller_name,this.file,this.price,this.munciname,this.categoryname).subscribe((res)=>{
   if(res){
-    alert("Added Product")
+    alert("Added Sucessfully Product")
     this.fileUploader.nativeElement.value = null;
     this.getprduct()
     this.price=''

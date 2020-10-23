@@ -10,6 +10,7 @@ import { sharedService } from '../service/shared.service';
 })
 export class MuncipartiComponent implements OnInit {
   data:any
+  Price:any
   distrcitname:any
   Name:any
 
@@ -43,15 +44,20 @@ export class MuncipartiComponent implements OnInit {
     if(!this.Name){
       alert("Please Enter Name")
       return
+    }else if(!this.Price){
+      alert("Please Enter Shipping Fees")
     }
     let obj={
       "districtId":this.distrcitname,
- 	"municipality_name":this.Name,
+   "municipality_name":this.Name,
+   'shipping_fee':this.Price,
      "is_available":0
     }
     this.service.createMunicipality(obj).subscribe((res)=>{
       if(res){
-        alert("Added")
+        this.Name=''
+        this.Price=''
+        alert("Added Sucessfully")
         this.distrcitname=''
       }
     })

@@ -30,7 +30,7 @@
                       <input type="text" placeholder="CouponName" [(ngModel)]="catName" name="company_name">
                    </div>
                    <div  class="mt-3">
-                    <input type="text" placeholder="Percent" [(ngModel)]="offer_percent" name="offer_percent">
+                    <input type="number" placeholder="Percent" [(ngModel)]="offer_percent" name="offer_percent">
                  </div>
                      <!-- <p style="color:red;"  *ngIf="error">{{message}}</p> -->
                      <div class="single-login-field mt-3">
@@ -62,16 +62,12 @@
         <td>
           {{ country.offer_percent }}
         </td>
-        <!-- <td>
-          <a href="http://15.206.101.235:3010/{{country.catImage}}" target="_blank">link</a>
-        </td> -->
+    
         
         <td>
-          <button  (click)="delte(country._id)" class="btn btn-outline-primary">Delete</button>
+          <button  (click)="delte(country._id)" class="btn btn-outline-primary">delete</button>
         </td>
-        <!-- <td>
-         <button  (click)="delte(country._id)" class="btn btn-outline-primary">delete</button>
-       </td> -->
+        
       </tr>
       </tbody>
     </table>

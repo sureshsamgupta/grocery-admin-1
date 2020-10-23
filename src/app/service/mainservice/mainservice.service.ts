@@ -113,7 +113,7 @@ export class MainserviceService {
   }
 
   delcoupon(key){
-    return this.sevice.getLogin('deleteCoupon/' + key +"/", ' DEL',0, );
+    return this.sevice.getLogin('deleteCoupon/' + key +"/", 'DEL',0, );
   }
   statuschnage(data: object){
     return this.sevice.getLogin('updateStatus', 'POST', data);
