@@ -73,7 +73,7 @@ this.countryname=value
   delte(id){
     this.service.delcategory(id).subscribe((res)=>{
       if(res){
-        alert("delete Sucessfull")
+        alert("Delete Sucessfull")
         this.getqccatgegroy()
       }
     }, (error) => {

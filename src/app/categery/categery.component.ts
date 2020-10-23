@@ -75,7 +75,7 @@ this.service.uploadcategory(this.catType,this.catName,this.file).subscribe((res)
   delte(id){
     this.service.delcategory(id).subscribe((res)=>{
       if(res){
-        alert("delete Sucessfull")
+        alert("Delete Sucessfull")
         this.webuydata()
       }
     }, (error) => {

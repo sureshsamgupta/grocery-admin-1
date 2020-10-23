@@ -51,7 +51,7 @@ export class MuncipartiComponent implements OnInit {
       "districtId":this.distrcitname,
    "municipality_name":this.Name,
    'shipping_fee':this.Price,
-     "is_available":0
+     "is_available":1
     }
     this.service.createMunicipality(obj).subscribe((res)=>{
       if(res){

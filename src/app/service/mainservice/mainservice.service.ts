@@ -105,15 +105,15 @@ export class MainserviceService {
   }
 
   delcategory(key){
-    return this.sevice.getLogin('deleteCategory/' + key, 'GET',0, );
+    return this.sevice.getLogin('DeleteCategory/' + key, 'GET',0, );
   }
 
   delsubcategory(key){
-    return this.sevice.getLogin('deleteSubCategory/' + key, 'GET',0, );
+    return this.sevice.getLogin('DeleteSubCategory/' + key, 'GET',0, );
   }
 
   delcoupon(key){
-    return this.sevice.getLogin('deleteCoupon/' + key +"/", 'DEL',0, );
+    return this.sevice.getLogin('DeleteCoupon/' + key +"/", 'DEL',0, );
   }
   statuschnage(data: object){
     return this.sevice.getLogin('updateStatus', 'POST', data);
@@ -164,15 +164,15 @@ export class MainserviceService {
 
 
   delproductcategory(key){
-    return this.sevice.getLogin('deleteCategory/' + key +"/", 'DEL',0, );
+    return this.sevice.getLogin('DeleteCategory/' + key +"/", 'DEL',0, );
   }
 
   delproduct(key){
-    return this.sevice.getLogin('deleteProduct/' + key +"/", 'DEL',0, );
+    return this.sevice.getLogin('DeleteProduct/' + key +"/", 'DEL',0, );
   }
 
   delbanner(key){
-    return this.sevice.getLogin('deleteBanner/' + key +"/", 'DEL',0, );
+    return this.sevice.getLogin('DeleteBanner/' + key +"/", 'DEL',0, );
   }
 
   getbanner(){

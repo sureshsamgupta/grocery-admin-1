@@ -60,7 +60,7 @@ getLogin(url: String, method: String, data = null): any {
       this.extractData(res)
     ));
   }else  if (method == 'DEL') {
-    return this._http.delete(this.url, this.getHeader()).pipe(map(res =>
+    return this._http.Delete(this.url, this.getHeader()).pipe(map(res =>
       this.extractData(res)
     ));
   }
