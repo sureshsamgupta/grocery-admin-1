@@ -186,4 +186,13 @@ export class MainserviceService {
     return this.sevice.getLogin('createBanner', 'POST', input);
   }
 
+
+  deletedistrcit(key){
+    return this.sevice.getLogin('deleteDistrict/' + key +"/", 'DEL',0, );
+  }
+
+  deletemunci(key){
+    return this.sevice.getLogin('deleteMunicipality/' + key +"/", 'DEL',0, );
+  }
+
 }

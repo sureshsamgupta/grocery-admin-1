@@ -48,6 +48,7 @@
         <th scope="col">No</th>
         <th scope="col">Name</th>
         <th scope="col">Muncipality</th>
+        <th scope="col">Delete</th>
       </tr>
       </thead>
       <tbody>
@@ -65,9 +66,9 @@
         <td>
           <button  (click)="munci(country.municipalityDatas)" class="btn btn-outline-primary">Muncipality</button>
         </td>
-        <!-- <td>
+        <td>
          <button  (click)="delte(country._id)" class="btn btn-outline-primary">Delete</button>
-       </td> -->
+       </td>
       </tr>
       </tbody>
     </table>
@@ -87,6 +88,7 @@
          <tr>
           <th scope="col">No</th>
            <th scope="col">municipality Name</th>
+           <th scope="col">Delete</th>
           
          </tr>
          </thead>
@@ -96,6 +98,9 @@
            <td>
              {{ country.municipality_name }} 
            </td>
+           <td>
+            <button  (click)="deltemunci(country._id)" class="btn btn-outline-primary">Delete</button>
+          </td>
          </tr>
          </tbody>
        </table>

@@ -59,4 +59,25 @@ export class DistrictComponent implements OnInit {
     this.status=true
   }
 
+
+  delte(key){
+    console.log(key)
+    this.service.deletedistrcit(key).subscribe((res)=>{
+      if(res){
+        alert("Delete Successfully")
+        this.getdistrcitdata()
+      }
+    })
+}
+
+deltemunci(key){
+  console.log(key)
+  this.service.deletemunci(key).subscribe((res)=>{
+    if(res){
+      alert("Delete Successfully")
+      this.getdistrcitdata()
+    }
+  })
+}
+
 }

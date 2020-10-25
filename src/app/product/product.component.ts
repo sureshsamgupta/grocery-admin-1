@@ -35,6 +35,7 @@ export class ProductComponent implements OnInit {
 console.log(key)
 if(key==1){
   for(let i=0;i<=this.categorydata.length;i++){
+    console.log(this.categorydata[i].cat_name)
       if(this.categorydata[i].cat_name==value){
         this.categoryname=this.categorydata[i]._id
         console.log(this.categoryname)

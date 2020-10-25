@@ -45,7 +45,7 @@ export class CategeryComponent implements OnInit {
 this.error=true
 this.message="enter Correct data"
   }else{
-this.service.uploadcategory(this.catType,this.catName,this.file).subscribe((res)=>{
+this.service.uploadcategory(this.catType,this.catName.trim(),this.file).subscribe((res)=>{
   console.log(res)
   if(res){
     this.webuydata()

@@ -6,16 +6,17 @@
   <table class="table table-striped " >
      <thead>
      <tr>
-       <th scope="col">No</th>
        <th scope="col">Name</th>
        <th scope="col">Email-id</th>
-       <th scope="col">mobile</th>
+       <th scope="col">Mobile</th>
+       <th scope="col">District</th>
+       <th scope="col">Municipality</th>
+       <th scope="col">Address</th>
        <!-- <th scope="col">block</th> -->
      </tr>
      </thead>
      <tbody>
      <tr *ngFor="let country of candinatedata| paginate: { itemsPerPage: 5, currentPage: p }; index as i">
-       <th scope="row">{{ i + 1 }}</th>
        <td>
          {{ country.full_name }}
        </td>
@@ -26,6 +27,15 @@
        <td>
          {{ country.mobile_number }}
        </td>
+       <td>
+        {{ country.district }}
+      </td>
+      <td>
+        {{ country.municipality }}
+      </td>
+      <td>
+        {{ country.address }}
+      </td>
        <td>
         <!-- <button *ngIf="country.is_blocked==0" (click)="block(country._id,country.is_blocked)" class="btn btn-outline-primary">Block</button> -->
         <!-- <button *ngIf="country.is_blocked==1" (click)="block(country._id,country.is_blocked)" class="btn btn-outline-primary">UNBlock</button> -->
