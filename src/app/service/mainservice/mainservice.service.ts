@@ -136,6 +136,10 @@ export class MainserviceService {
     return this.sevice.getLogin('updateStatus', 'POST', data);
   }
 
+  updateprduct(data: object){
+    return this.sevice.getLogin('updateProduct', 'POST', data);
+  }
+
   createMunicipality(data: object){
     return this.sevice.getLogin('createMunicipality', 'POST', data);
   }

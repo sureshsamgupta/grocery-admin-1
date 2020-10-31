@@ -14,10 +14,14 @@ import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { BannerComponent } from './banner/banner.component';
+import { ReportComponent } from './report/report.component';
+import { EditproductComponent } from './editproduct/editproduct.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'login' , component:LoginComponent},
   {path: 'order' , component:OrderComponent},
+  {path: 'report' , component:ReportComponent},
+  {path: 'edit' , component:EditproductComponent},
   {path: 'user' , component:UserComponent},
   {path: 'prodcut' , component:ProductComponent},
   {path: 'categrory' , component:AddcategoryComponent},

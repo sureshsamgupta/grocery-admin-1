@@ -9,6 +9,7 @@ import { sharedService } from '../service/shared.service';
   styleUrls: ['./munciparti.component.css']
 })
 export class MuncipartiComponent implements OnInit {
+  minPrice:any
   data:any
   Price:any
   distrcitname:any
@@ -46,8 +47,13 @@ export class MuncipartiComponent implements OnInit {
       return
     }else if(!this.Price){
       alert("Please Enter Shipping Fees")
+      return
+    }else if(this.minPrice){
+      alert("Please Enter MInimum Price")
+      return
     }
     let obj={
+      "minimum_price":this.minPrice,
       "districtId":this.distrcitname,
    "municipality_name":this.Name,
    'shipping_fee':this.Price,

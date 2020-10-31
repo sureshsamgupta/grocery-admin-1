@@ -23,6 +23,8 @@ import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { BannerComponent } from './banner/banner.component';
+import { ReportComponent } from './report/report.component';
+import { EditproductComponent } from './editproduct/editproduct.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { BannerComponent } from './banner/banner.component';
     AddcategoryComponent,
     ProductComponent,
     OrderComponent,
-    BannerComponent
+    BannerComponent,
+    ReportComponent,
+    EditproductComponent
   ],
   imports: [
     NgxPaginationModule,
