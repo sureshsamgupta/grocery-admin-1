@@ -123,6 +123,7 @@
         <th scope="col">Product Name</th>
         <th scope="col">Price</th>
         <th scope="col">Image</th>
+        <th scope="col">Add munciparties</th>
         <th scope="col">Delete</th>
       </tr>
       </thead>
@@ -139,6 +140,9 @@
          <a href="http://13.234.42.204:3013/{{country.product_image}}" target="_blank">link</a>
        </td>
        <td>
+         <button  (click)=" sendcommendt()" class="btn btn-outline-primary">Add Municipality</button>
+       </td>
+       <td>
         <button  (click)="delte(country._id)" class="btn btn-outline-primary">Delete</button>
       </td>
         
@@ -148,3 +152,45 @@
      
   </body>
   </html>
+
+
+
+  <ng-template #addticket>
+   <div class="modalHeader">
+     <div class="row">
+       <div class="col-sm-12">
+         <div class="modal-header">
+           <h5 class="m-0">Add Municipality</h5>
+           <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <form [formGroup]="ticketForm" >
+             <div class="form-group">
+               <label>Project</label>
+ 
+               <select formControlName="type" class="custom-select"
+                 [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                 <option value="" disabled>Choose Project</option>
+                 <option *ngFor="let typeA of munciparties">{{typeA.municipality_name}}</option>
+               </select>
+               <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                 <div *ngIf="f.type.errors.required">Project is required</div>
+               </div>
+ 
+             </div>
+ 
+            
+ 
+             <div class="form-group text-center">
+               <button class="btn btn-default">Save</button>
+             </div>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+ </ng-template>
+ 

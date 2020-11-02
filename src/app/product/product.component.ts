@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, TemplateRef } from '@angular/core';
 import { MainserviceService } from '../service/mainservice/mainservice.service';
 import { Router } from '@angular/router';
 import { sharedService } from '../service/shared.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-product',
@@ -19,9 +20,11 @@ export class ProductComponent implements OnInit {
   categorydata:any
   munciparties:any
   productdata:any
+  @ViewChild('addticket',{static: false}) addticket: TemplateRef<any>;
+  modalRef: BsModalRef;
   @ViewChild('fileUploader',{static: false}) fileUploader:ElementRef;
 
-  constructor(private service:MainserviceService,private router:Router,private sub:sharedService) { }
+  constructor(private service:MainserviceService,private router:Router,private sub:sharedService,private modalService: BsModalService) { }
 
   ngOnInit() {
     this.sub.getToken(true);
@@ -50,6 +53,13 @@ if(key==1){
 }
 }
     
+  }
+
+
+  sendcommendt(){
+    this.modalRef = this.modalService.show(this.addticket, {
+      class: "logoutClass",
+    });
   }
 
 

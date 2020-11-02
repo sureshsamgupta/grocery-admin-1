@@ -25,6 +25,7 @@ import { OrderComponent } from './order/order.component';
 import { BannerComponent } from './banner/banner.component';
 import { ReportComponent } from './report/report.component';
 import { EditproductComponent } from './editproduct/editproduct.component';
+import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { EditproductComponent } from './editproduct/editproduct.component';
     EditproductComponent
   ],
   imports: [
+    ModalModule.forRoot(),
     NgxPaginationModule,
     HttpClientModule,
     BrowserModule,
