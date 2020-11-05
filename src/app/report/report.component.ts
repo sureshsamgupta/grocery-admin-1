@@ -22,6 +22,13 @@ export class ReportComponent implements OnInit {
   toDate:any
   frodayes:any=[]
   todayes:any=[]
+  productdata:any
+status=true
+productitemany:any
+userid1:any
+addressitem:any
+userdata:any
+userid:any
 
   ngOnInit() {
     console.log(this.data)
@@ -63,6 +70,7 @@ addmunci(){
   this.service.report(obj).subscribe((res)=>{
     if(res){
       console.log(res)
+      this.productdata=res
     }
   })
 }
@@ -98,5 +106,26 @@ this.fromYear=value
   
       
     }
+
+
+    details(productitems,address,id,user){
+      this.status=false
+    this.userid=id
+    this.productitemany=productitems
+    this.addressitem=address
+    this.userdata=user
+    this.userid1=user._id
+        console.log(productitems)
+        console.log("address")
+        console.log(address)
+        console.log(id)
+        console.log(user)
+    
+      }
+
+      backto(){
+        this.status=true
+      }
+
 
 }

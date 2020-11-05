@@ -68,7 +68,7 @@
         </div>
      </div>
 
-     <div class="container-fluid">
+     <div  class="container-fluid">
       <div class="row">
          <div class="col-md-4 offset-md-4">
           <div class="card card-content p-4">
@@ -138,42 +138,73 @@
          </div>
        </div>
      </div>
-     <p>Total Earning:</p>
-     <!-- <table class="table table-striped " style="margin-top: 10px;">
-      <thead>
-      <tr>
-        <th scope="col">No</th>
-        <th scope="col">Catid</th>
-        <th scope="col">Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let country of candinatedata; index as i">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>
-          {{ country.catId }} 
-        </td>
-        <td>
-          {{ country.subCatName }}
-        </td>
-        {{ country.price }}
-        <td>
-        
-       </td>
-       
-       <td>
-         <button  (click)="block(country)" class="btn btn-outline-primary">edit</button>
-       </td>
-       <td>
-        <button  (click)="delte(country._id)" class="btn btn-outline-primary">Delete</button>
-      </td>
-        
-      </tr>
-      </tbody>
-    </table> -->
+     <table *ngIf="status"class="table table-striped " style="margin-top: 10px;">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Request Date</th>
+          <th scope="col">Order Status</th>
+          <th scope="col">Total Price</th>
+          <th scope="col">Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let country of productdata| paginate: { itemsPerPage: 5, currentPage: p }; index as i">
+          <td>
+            {{ country._id}}
+          </td>
+          <td>
+              {{ country.requestDate}}
+            </td>
+            <td>
+              {{ country.order_status}}
+            </td>
+            <td>
+              {{ country.total_price}}
+            </td>
+          <td>
+            <button  (click)="details(country.product_items,country.delivery_address,country._id,country.user)" class="btn btn-outline-primary">Details</button>
+          </td>
+         
+        </tr>
+        </tbody>
+      </table>
      
   </body>
   </html>
+
+
+  <div *ngIf="!status">
+    <div>
+        <button class="float-right" style="margin: 10px;" (click)="backto()">Back</button>
+     </div>
+      <table class="table table-striped" >
+         <thead>
+         <tr>
+           <th scope="col"> Product Name</th>
+           <th scope="col"> Quantity</th>
+           <th scope="col"> Image</th>
+           <th scope="col"> Price</th>
+          
+         </tr>
+         </thead>
+         <tbody>
+         <tr *ngFor="let country of productitemany; index as i">
+           <td>
+             {{ country.product.product_name }} 
+           </td>
+           <td>
+            {{ country.qty }} 
+          </td>
+          <td>
+            <a href="http://13.234.42.204:3013/{{country.product.product_image}}" target="_blank">link</a>
+          </td>
+          <td>
+            {{ country.product.price }}
+          </td>
+         
+         </tr>
+         </tbody>
+       </table>
+       <p>Address:<b>{{addressitem.customer_name}}</b>, {{addressitem.house_number}},{{addressitem.district}},{{addressitem.municipality}}  ,Mobile Number: {{addressitem.phone_number}}</p>
+     </div>
