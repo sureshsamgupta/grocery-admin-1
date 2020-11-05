@@ -77,7 +77,7 @@
                <form>
                   <div class="single-login-field mt-3">
                       <select class="form-control" #device (change)="onChange($event, device.value)">
-                          <option *ngFor="let data1 of data">{{data1.district_name}}</option>
+                          <option *ngFor="let data1 of data">{{data1}}</option>
                           </select>
                   </div>
                   <div class="single-login-field mt-3">

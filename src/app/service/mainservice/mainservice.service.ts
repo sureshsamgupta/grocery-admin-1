@@ -136,6 +136,10 @@ export class MainserviceService {
     return this.sevice.getLogin('updateStatus', 'POST', data);
   }
 
+  report(data: object){
+    return this.sevice.getLogin('getAllOrderBtweenDate', 'POST', data);
+  }
+
   updateprduct(data: object){
     return this.sevice.getLogin('updateProduct', 'POST', data);
   }

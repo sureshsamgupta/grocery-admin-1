@@ -12,6 +12,7 @@
        <th scope="col">District</th>
        <th scope="col">Municipality</th>
        <th scope="col">Address</th>
+       <th scope="col">Image</th>
        <!-- <th scope="col">block</th> -->
      </tr>
      </thead>
@@ -36,9 +37,8 @@
       <td>
         {{ country.address }}
       </td>
-       <td>
-        <!-- <button *ngIf="country.is_blocked==0" (click)="block(country._id,country.is_blocked)" class="btn btn-outline-primary">Block</button> -->
-        <!-- <button *ngIf="country.is_blocked==1" (click)="block(country._id,country.is_blocked)" class="btn btn-outline-primary">UNBlock</button> -->
+      <td>
+        <a href="http://13.234.42.204:3013/{{country.profile_image}}" target="_blank">link</a>
       </td>
      </tr>
      </tbody>
