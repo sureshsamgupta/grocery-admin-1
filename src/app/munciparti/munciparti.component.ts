@@ -45,18 +45,10 @@ export class MuncipartiComponent implements OnInit {
     if(!this.Name){
       alert("Please Enter Name")
       return
-    }else if(!this.Price){
-      alert("Please Enter Shipping Fees")
-      return
-    }else if(this.minPrice){
-      alert("Please Enter MInimum Price")
-      return
     }
     let obj={
-      "minimum_price":this.minPrice,
       "districtId":this.distrcitname,
    "municipality_name":this.Name,
-   'shipping_fee':this.Price,
      "is_available":1
     }
     this.service.createMunicipality(obj).subscribe((res)=>{

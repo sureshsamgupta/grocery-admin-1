@@ -11,7 +11,7 @@
      <div class="container-fluid p-4">
         <div class="row">
           <div class="col-lg-6">
-            <h1 class="color"> District</h1>
+            <h1 class="color"> State</h1>
           </div>
           <div class="col-lg-6 text-right">
             <!-- <button class="btn btn-back text-light p-1" (click)="back()"><i class="fa fa-undo m-2" aria-hidden="true"></i>Back to Dashboard</button> -->
@@ -47,7 +47,7 @@
       <tr>
         <th scope="col">No</th>
         <th scope="col">Name</th>
-        <th scope="col">Muncipality</th>
+        <th scope="col">City</th>
         <th scope="col">Delete</th>
       </tr>
       </thead>
@@ -64,7 +64,7 @@
           <a href="http://15.206.101.235:3010/{{country.catImage}}" target="_blank">link</a>
         </td> -->
         <td>
-          <button  (click)="munci(country.municipalityDatas)" class="btn btn-outline-primary">Muncipality</button>
+          <button  (click)="munci(country.municipalityDatas)" class="btn btn-outline-primary">City</button>
         </td>
         <td>
          <button  (click)="delte(country._id)" class="btn btn-outline-primary">Delete</button>
@@ -87,7 +87,7 @@
          <thead>
          <tr>
           <th scope="col">No</th>
-           <th scope="col">municipality Name</th>
+           <th scope="col">City Name</th>
            <th scope="col">Delete</th>
           
          </tr>
