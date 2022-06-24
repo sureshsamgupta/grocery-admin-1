@@ -7,7 +7,7 @@ import {  HttpHeaders, HttpRequest, HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CommonService  {
-  baseurl:string="3.137.133.59:3014/user/"
+  baseurl:string="34.209.104.83:3014/user/"
   key:string=""
   private port:any=":3001";
   private BASE_URL: string =""
